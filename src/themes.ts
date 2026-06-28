@@ -1,0 +1,290 @@
+import { SystemTheme } from './types';
+
+export interface ThemeConfig {
+  name: string;
+  isDark: boolean;
+  bg: string;
+  card: string;
+  text: string;
+  textMuted: string;
+  border: string;
+  accent: string;
+  accentHover: string;
+  accentText: string;
+  gradient: string;
+  fontFamily: string;
+  cardGlass?: string;
+}
+
+export const THEMES: Record<SystemTheme, ThemeConfig> = {
+  galaxy: {
+    name: 'Galaxy Orbit',
+    isDark: true,
+    bg: 'bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))]',
+    card: 'bg-slate-900/40 backdrop-blur-md border border-slate-800/60',
+    cardGlass: 'bg-indigo-950/20 backdrop-blur-md border border-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.1)]',
+    text: 'text-slate-100',
+    textMuted: 'text-slate-400',
+    border: 'border-slate-800/80',
+    accent: 'bg-indigo-600 hover:bg-indigo-500',
+    accentHover: 'hover:bg-indigo-500/20',
+    accentText: 'text-indigo-400',
+    gradient: 'from-indigo-500 via-purple-600 to-pink-500',
+    fontFamily: 'font-sans'
+  },
+  cyberpunk: {
+    name: 'Cyberpunk 2077',
+    isDark: true,
+    bg: 'bg-zinc-950 border-yellow-400/20',
+    card: 'bg-zinc-900/90 border-2 border-cyan-500/30 shadow-[4px_4px_0px_#facc15]',
+    cardGlass: 'bg-black/80 border border-pink-500/50 shadow-[0_0_15px_rgba(236,72,153,0.25)]',
+    text: 'text-yellow-400 font-mono',
+    textMuted: 'text-zinc-400 font-mono',
+    border: 'border-zinc-800',
+    accent: 'bg-pink-600 hover:bg-pink-500 text-black font-bold shadow-[2px_2px_0px_#22d3ee]',
+    accentHover: 'hover:bg-pink-500/20',
+    accentText: 'text-pink-400',
+    gradient: 'from-pink-500 via-purple-600 to-cyan-400',
+    fontFamily: 'font-mono'
+  },
+  sakura: {
+    name: 'Sakura Blossom',
+    isDark: true,
+    bg: 'bg-[#1a1217] bg-[radial-gradient(ellipse_at_top,rgba(244,143,177,0.15),rgba(26,18,23,1))]',
+    card: 'bg-[#291b24]/85 backdrop-blur-md border border-[#422838]',
+    cardGlass: 'bg-[#2e1e29]/95 border border-pink-400/20 shadow-[0_0_15px_rgba(244,143,177,0.1)]',
+    text: 'text-pink-100',
+    textMuted: 'text-[#d6a5c6]',
+    border: 'border-[#4a2e3f]',
+    accent: 'bg-pink-400 hover:bg-pink-350 text-black font-semibold',
+    accentHover: 'hover:bg-pink-305/20',
+    accentText: 'text-pink-300',
+    gradient: 'from-pink-300 via-rose-300 to-indigo-300',
+    fontFamily: 'font-sans'
+  },
+  ocean: {
+    name: 'Ocean Abyssal',
+    isDark: true,
+    bg: 'bg-cyan-950 bg-[radial-gradient(ellipse_at_top,rgba(8,145,178,0.2),rgba(8,47,73,1))]',
+    card: 'bg-sky-950/50 backdrop-blur-lg border border-sky-800/40',
+    cardGlass: 'bg-cyan-900/20 backdrop-blur-lg border border-cyan-400/20 shadow-[0_4px_20px_rgba(6,182,212,0.15)]',
+    text: 'text-cyan-100',
+    textMuted: 'text-cyan-400/70',
+    border: 'border-sky-900/65',
+    accent: 'bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-medium',
+    accentHover: 'hover:bg-cyan-500/20',
+    accentText: 'text-cyan-400',
+    gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
+    fontFamily: 'font-sans'
+  },
+  forest: {
+    name: 'Mystic Forest',
+    isDark: true,
+    bg: 'bg-[#0f1914] bg-[radial-gradient(ellipse_at_top,rgba(20,50,30,0.4),rgba(10,20,15,1))]',
+    card: 'bg-[#14231b]/60 backdrop-blur-md border border-emerald-900/40',
+    cardGlass: 'bg-emerald-950/20 backdrop-blur-md border border-emerald-500/20 shadow-lg',
+    text: 'text-stone-100',
+    textMuted: 'text-stone-400',
+    border: 'border-emerald-955/40',
+    accent: 'bg-emerald-600 hover:bg-emerald-500 text-stone-100',
+    accentHover: 'hover:bg-emerald-500/20',
+    accentText: 'text-emerald-400',
+    gradient: 'from-emerald-400 via-teal-500 to-yellow-200',
+    fontFamily: 'font-sans'
+  },
+  minimal: {
+    name: 'Minimal White',
+    isDark: false,
+    bg: 'bg-neutral-50',
+    card: 'bg-white border border-neutral-200 shadow-none rounded-none',
+    cardGlass: 'bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none',
+    text: 'text-neutral-900',
+    textMuted: 'text-neutral-500',
+    border: 'border-neutral-200',
+    accent: 'bg-neutral-900 hover:bg-neutral-800 text-white rounded-none',
+    accentHover: 'hover:bg-neutral-100',
+    accentText: 'text-neutral-900 underline underline-offset-4',
+    gradient: 'from-neutral-900 to-neutral-600',
+    fontFamily: 'font-sans'
+  },
+  midnight: {
+    name: 'Midnight Charcoal',
+    isDark: true,
+    bg: 'bg-neutral-950',
+    card: 'bg-neutral-900/95 border border-neutral-800',
+    cardGlass: 'bg-neutral-900 border border-neutral-700',
+    text: 'text-neutral-100',
+    textMuted: 'text-neutral-400',
+    border: 'border-neutral-800',
+    accent: 'bg-white hover:bg-neutral-200 text-black',
+    accentHover: 'hover:bg-neutral-800',
+    accentText: 'text-white',
+    gradient: 'from-white to-neutral-400',
+    fontFamily: 'font-sans'
+  },
+  elegant: {
+    name: 'Elegant Dark',
+    isDark: true,
+    bg: 'bg-[#0A0A0C] text-slate-200',
+    card: 'bg-[#121218] border border-white/10 rounded-3xl shadow-2xl',
+    cardGlass: 'bg-[#121218]/90 backdrop-blur-md border border-white/10 shadow-2xl rounded-3xl',
+    text: 'text-slate-200',
+    textMuted: 'text-slate-500',
+    border: 'border-white/10',
+    accent: 'bg-indigo-600 hover:bg-indigo-500 text-white',
+    accentHover: 'hover:bg-indigo-500/20',
+    accentText: 'text-indigo-400',
+    gradient: 'from-white to-slate-400',
+    fontFamily: 'font-sans'
+  },
+  nordic: {
+    name: 'Nordic Aurora',
+    isDark: true,
+    bg: 'bg-[#1e2530] bg-[radial-gradient(ellipse_at_top,rgba(115,186,173,0.15),rgba(30,37,48,1))]',
+    card: 'bg-[#293241]/85 backdrop-blur-md border border-[#3d4a5e]',
+    cardGlass: 'bg-[#293241]/90 backdrop-blur-md border border-[#495e7c]/70 shadow-lg',
+    text: 'text-sky-100',
+    textMuted: 'text-[#8da9c4]',
+    border: 'border-[#3f516a]',
+    accent: 'bg-teal-600 hover:bg-teal-500 text-white',
+    accentHover: 'hover:bg-teal-500/20',
+    accentText: 'text-teal-400',
+    gradient: 'from-teal-400 via-sky-500 to-blue-500',
+    fontFamily: 'font-sans'
+  },
+  sunset: {
+    name: 'Sunset Horizon',
+    isDark: true,
+    bg: 'bg-[#1b121c] bg-[radial-gradient(ellipse_at_top,rgba(235,104,114,0.18),rgba(27,18,28,1))]',
+    card: 'bg-[#291b29]/85 backdrop-blur-md border border-[#452d45]',
+    cardGlass: 'bg-[#291b29]/90 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.15)]',
+    text: 'text-orange-100',
+    textMuted: 'text-[#cfa2cf]',
+    border: 'border-[#4c2d4c]',
+    accent: 'bg-orange-500 hover:bg-orange-400 text-white',
+    accentHover: 'hover:bg-orange-400/20',
+    accentText: 'text-orange-400',
+    gradient: 'from-amber-400 via-pink-500 to-indigo-500',
+    fontFamily: 'font-sans'
+  },
+  matrix: {
+    name: 'Matrix Grid',
+    isDark: true,
+    bg: 'bg-black border-lime-500/20',
+    card: 'bg-black border border-lime-550/40 shadow-[0_0_10px_rgba(132,204,22,0.15)]',
+    cardGlass: 'bg-black border border-lime-500/50 shadow-[0_0_15px_rgba(132,204,22,0.25)]',
+    text: 'text-lime-400 font-mono',
+    textMuted: 'text-lime-805/70 font-mono',
+    border: 'border-lime-950',
+    accent: 'bg-lime-500 hover:bg-lime-400 text-black font-bold font-mono',
+    accentHover: 'hover:bg-lime-400/20',
+    accentText: 'text-lime-400',
+    gradient: 'from-lime-500 to-[#00ff22]',
+    fontFamily: 'font-mono'
+  },
+  pastel_pink: {
+    name: 'Dreamy Pastel Pink',
+    isDark: true,
+    bg: 'bg-[#181116] bg-[radial-gradient(ellipse_at_top,rgba(244,143,177,0.14),rgba(24,17,22,1))]',
+    card: 'bg-[#241a22]/85 backdrop-blur-md border border-[#3e2b3b]',
+    cardGlass: 'bg-[#2a1d28]/90 border border-pink-400/20 shadow-[0_0_15px_rgba(244,143,177,0.1)]',
+    text: 'text-pink-100',
+    textMuted: 'text-[#d6a5c6]',
+    border: 'border-[#3e2b3b]',
+    accent: 'bg-pink-400 hover:bg-pink-350 text-black font-semibold',
+    accentHover: 'hover:bg-pink-305/20',
+    accentText: 'text-pink-300',
+    gradient: 'from-pink-300 via-rose-300 to-indigo-300',
+    fontFamily: 'font-sans'
+  },
+  royal_velvet: {
+    name: 'Royal Velvet',
+    isDark: true,
+    bg: 'bg-[#0f0a1c] bg-[radial-gradient(ellipse_at_top,rgba(157,78,221,0.16),rgba(15,10,28,1))]',
+    card: 'bg-[#1c1233]/80 border border-[#43237a]/55 backdrop-blur-md',
+    cardGlass: 'bg-[#1c1233]/90 border border-violet-500/30 shadow-[0_0_15px_rgba(157,78,221,0.25)]',
+    text: 'text-[#e2cfea]',
+    textMuted: 'text-[#a594bf]',
+    border: 'border-[#43237a]/45',
+    accent: 'bg-indigo-650 hover:bg-indigo-500 text-yellow-300 outline-yellow-400/30 font-bold',
+    accentHover: 'hover:bg-violet-500/20',
+    accentText: 'text-violet-400',
+    gradient: 'from-violet-500 via-purple-600 to-amber-400',
+    fontFamily: 'font-sans'
+  },
+  solis_amber: {
+    name: 'Solis Amber',
+    isDark: true,
+    bg: 'bg-[#140f0a] bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.12),rgba(20,15,10,1))]',
+    card: 'bg-[#1d1610]/85 border border-[#4b3521]/60 backdrop-blur-md',
+    cardGlass: 'bg-[#1e140d]/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.25)]',
+    text: 'text-amber-100',
+    textMuted: 'text-amber-300/60',
+    border: 'border-[#4b3521]/50',
+    accent: 'bg-amber-600 hover:bg-amber-500 text-black font-semibold',
+    accentHover: 'hover:bg-amber-500/20',
+    accentText: 'text-amber-400',
+    gradient: 'from-amber-400 via-yellow-500 to-orange-500',
+    fontFamily: 'font-sans'
+  },
+  vintage_bronze: {
+    name: 'Vintage Bronze',
+    isDark: true,
+    bg: 'bg-[#18130e] bg-[radial-gradient(ellipse_at_top,rgba(180,120,60,0.12),rgba(24,19,14,1))]',
+    card: 'bg-[#231b14]/90 border border-[#523a24]/60 backdrop-blur-md',
+    cardGlass: 'bg-[#261d15]/95 border border-[#c29363]/30 shadow-lg',
+    text: 'text-amber-100',
+    textMuted: 'text-[#b09b85]',
+    border: 'border-[#523a24]/50',
+    accent: 'bg-amber-700 hover:bg-amber-600 text-amber-50 font-semibold',
+    accentHover: 'hover:bg-amber-600/20',
+    accentText: 'text-amber-400',
+    gradient: 'from-amber-600 via-yellow-600 to-orange-700',
+    fontFamily: 'font-sans'
+  },
+  vaporwave: {
+    name: 'Vaporwave Neon',
+    isDark: true,
+    bg: 'bg-[#120c1f] bg-[radial-gradient(ellipse_at_top,rgba(236,72,153,0.15),rgba(18,12,31,1))]',
+    card: 'bg-[#1f1235]/80 border border-pink-500/30 backdrop-blur-md',
+    cardGlass: 'bg-[#1f1235]/90 border border-cyan-400/30 shadow-[0_0_15px_rgba(236,72,153,0.2)]',
+    text: 'text-pink-100',
+    textMuted: 'text-cyan-300/70',
+    border: 'border-pink-500/20',
+    accent: 'bg-pink-500 hover:bg-pink-400 text-black font-bold',
+    accentHover: 'hover:bg-pink-400/20',
+    accentText: 'text-cyan-300',
+    gradient: 'from-pink-500 via-purple-500 to-cyan-400',
+    fontFamily: 'font-sans'
+  },
+  emerald_gold: {
+    name: 'Emerald Gold',
+    isDark: true,
+    bg: 'bg-[#061510] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.1),rgba(6,21,16,1))]',
+    card: 'bg-[#0d221a]/90 border border-emerald-900/50 backdrop-blur-md',
+    cardGlass: 'bg-[#112d22]/95 border border-emerald-500/25 shadow-lg',
+    text: 'text-emerald-100',
+    textMuted: 'text-emerald-400/60',
+    border: 'border-emerald-950',
+    accent: 'bg-yellow-500 hover:bg-yellow-400 text-stone-950 font-semibold',
+    accentHover: 'hover:bg-yellow-500/20',
+    accentText: 'text-yellow-400',
+    gradient: 'from-emerald-600 via-teal-700 to-yellow-500',
+    fontFamily: 'font-sans'
+  },
+  noir_dark: {
+    name: 'Noir Dark',
+    isDark: true,
+    bg: 'bg-[#040404]',
+    card: 'bg-[#0b0b0b] border border-neutral-900',
+    cardGlass: 'bg-[#0f0f0f] border border-neutral-800 shadow-2xl',
+    text: 'text-neutral-100',
+    textMuted: 'text-neutral-500',
+    border: 'border-neutral-900',
+    accent: 'bg-neutral-100 hover:bg-neutral-200 text-black font-semibold',
+    accentHover: 'hover:bg-neutral-900',
+    accentText: 'text-neutral-200',
+    gradient: 'from-neutral-100 to-neutral-700',
+    fontFamily: 'font-sans'
+  }
+};
